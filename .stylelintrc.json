@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components"
+  ],
+  "plugins": ["stylelint-order"],
+  "customSyntax": "postcss-styled-syntax",
+  "rules": {
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes"]
+      }
+    ],
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]*$",
+    "no-descending-specificity": null,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "order/order": [
+      "custom-properties",
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "import"
+      },
+      "rules"
+    ],
+    "order/properties-alphabetical-order": true
+  },
+  "ignoreFiles": [
+    "**/*.config.js",
+    "**/*.config.ts",
+    "**/*.test.js",
+    "**/*.test.ts",
+    "**/*.js",
+    "**/*.jsx"
+  ]
+}
