@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {Box} from '@mui/material';
 
 import AppProvider from '@/providers/AppProvider';
 import './globals.css';
@@ -15,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body>
+      <Box component='body'>
         <AppProvider>{children}</AppProvider>
-      </body>
+      </Box>
     </html>
   );
 }

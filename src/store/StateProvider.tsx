@@ -1,7 +1,8 @@
 'use client';
 import React, {useReducer} from 'react';
 
-import type {WeatherState, WeatherActionTypes} from '@common/types/store';
+import type {WeatherActionTypes} from '@common/types/actions';
+import type {WeatherState} from '@common/types/store';
 
 import StateContext from './StateContext';
 import reducer from './reducers';

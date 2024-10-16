@@ -1,5 +1,7 @@
-import styles from './page.module.css';
+import React from 'react';
+
+import WeatherWidget from '@components/features/weather/WeatherWidget';
 
 export default function Home() {
-  return <div className={styles.page}>Root Page</div>;
+  return <WeatherWidget />;
 }

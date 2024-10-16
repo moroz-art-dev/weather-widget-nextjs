@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^5.1.0",
+    "@mui/icons-material": "^6.1.4",
     "@mui/material": "^6.1.3",
     "framer-motion": "^11.11.8",
     "next": "14.2.15",
@@ -64,7 +65,7 @@
     "**/*.{ts,tsx,js,jsx}": [
       "eslint",
       "prettier --check",
-      "jest --bail --findRelatedTests"
+      "jest --bail --findRelatedTests --passWithNoTests"
     ],
     "**/*.{css,scss,js,jsx,ts,tsx}": [
       "stylelint"

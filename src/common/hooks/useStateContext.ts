@@ -1,3 +1,4 @@
+'use client';
 import {useContext} from 'react';
 
 import StateContext from '@store/StateContext';

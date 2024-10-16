@@ -1,28 +1,30 @@
-import type {WeatherActionTypes, WeatherState} from '@common/types/store';
+import type {WeatherState} from '@common/types/store';
+import type {WeatherActionTypes} from '@common/types/actions';
 
 import {
-  SET_LOCATION,
-  SET_TEMPERATURE,
+  SET_LOCATION_BY_CITY,
+  SET_LOCATION_BY_COORDINATES,
   SET_LOADING,
   SET_ERROR,
   SET_WEATHER_DATA,
+  SET_FORECAST_DATA,
 } from '../actions/actionTypes';
 import {initialState} from '../initialState';
 
 const reducer = (
   state: WeatherState = initialState,
   action: WeatherActionTypes
-) => {
+): WeatherState => {
   switch (action.type) {
-    case SET_LOCATION:
+    case SET_LOCATION_BY_CITY:
       return {
         ...state,
         location: action.payload,
       };
-    case SET_TEMPERATURE:
+    case SET_LOCATION_BY_COORDINATES:
       return {
         ...state,
-        temperature: action.payload,
+        coordinates: action.payload,
       };
     case SET_LOADING:
       return {
@@ -38,6 +40,11 @@ const reducer = (
       return {
         ...state,
         weatherData: action.payload,
+      };
+    case SET_FORECAST_DATA:
+      return {
+        ...state,
+        forecastData: action.payload,
       };
     default:
       return state;
