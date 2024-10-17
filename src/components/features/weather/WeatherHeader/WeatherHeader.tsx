@@ -1,13 +1,17 @@
 'use client';
 import React from 'react';
-import {Box, Container} from '@mui/material';
+import {Box, Container, useMediaQuery, Theme} from '@mui/material';
 
 import LocationSelector from '@components/features/location/LocationSelector';
 import ThemeSwitcher from '@components/common/ThemeSwitcher';
 
 const WeatherHeader: React.FC = () => {
+  const isWide = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.between('sm', 'md')
+  );
+  const isLarge = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'));
   return (
-    <Container component='header' sx={{backgroundColor: 'background.paper'}}>
+    <Container component='header'>
       <Box
         sx={{
           display: 'flex',
@@ -19,7 +23,7 @@ const WeatherHeader: React.FC = () => {
         }}
       >
         <LocationSelector />
-        <ThemeSwitcher />
+        {(isWide || isLarge) && <ThemeSwitcher />}
       </Box>
     </Container>
   );

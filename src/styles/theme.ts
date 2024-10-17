@@ -28,7 +28,32 @@ const theme = (mode: 'light' | 'dark') => {
       values: sizes.breakpoints,
     },
     typography: typography,
-    components: {},
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          ':root': {
+            '--primary-color': palette.primary,
+            '--secondary-color': palette.secondary,
+            '--background-color': palette.background,
+            '--text-color': palette.text,
+            '--border-color': palette.border,
+            '--button-background': palette.button.background,
+            '--button-text': palette.button.text,
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            backgroundColor: 'var(--button-background)',
+            color: 'var(--button-text)',
+            '&:hover': {
+              backgroundColor: 'var(--primary-color)',
+            },
+          },
+        },
+      },
+    },
   });
 };
 

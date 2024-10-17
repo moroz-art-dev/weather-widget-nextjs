@@ -1,5 +1,5 @@
 'use client';
-
+import CssBaseline from '@mui/material/CssBaseline';
 import React, {useState} from 'react';
 import {ThemeProvider as MuiThemeProvider} from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -22,7 +22,10 @@ const ThemeProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
 
   return (
     <ThemeContext.Provider value={{toggleTheme, mode}}>
-      <MuiThemeProvider theme={appliedTheme}>{children}</MuiThemeProvider>
+      <MuiThemeProvider theme={appliedTheme}>
+        <CssBaseline />
+        {children}
+      </MuiThemeProvider>
     </ThemeContext.Provider>
   );
 };

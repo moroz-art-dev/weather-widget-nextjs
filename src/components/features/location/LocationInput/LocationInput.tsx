@@ -57,6 +57,7 @@ const LocationInput: React.FC = () => {
 
   return (
     <Autocomplete
+      style={{width: 236}}
       value={options.find(option => option.name === state.location) || null}
       inputValue={inputValue}
       options={options}
