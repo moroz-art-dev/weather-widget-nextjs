@@ -1,19 +1,12 @@
-import {GEONAMES_USERNAME, GEONAMES_BASE_URL} from '@common/config/apiConfig';
-import type {Coordinates} from '@common/types/location';
-interface CityResponse {
-  geonameId: number;
-  name: string;
-  countryName: string;
-  lat?: number;
-  lng?: number;
-}
+import {GEONAMES_PROXY_BASE_URL} from '@common/config/apiConfig';
+import type {Coordinates, CityResponse} from '@common/types/location';
 
 const fetchCities = async (
   query: string,
   maxRows: number
 ): Promise<CityResponse[]> => {
   const response = await fetch(
-    `${GEONAMES_BASE_URL}/searchJSON?q=${query}&maxRows=${maxRows}&username=${GEONAMES_USERNAME}`
+    `${GEONAMES_PROXY_BASE_URL}searchJSON?q=${query}&maxRows=${maxRows}`
   );
 
   if (!response.ok) {
@@ -44,7 +37,7 @@ export const fetchCityByCoordinates = async (
   longitude: number
 ): Promise<CityResponse | null> => {
   const response = await fetch(
-    `${GEONAMES_BASE_URL}/findNearbyPlaceNameJSON?lat=${latitude}&lng=${longitude}&username=${GEONAMES_USERNAME}`
+    `${GEONAMES_PROXY_BASE_URL}findNearbyPlaceNameJSON?lat=${latitude}&lng=${longitude}`
   );
 
   if (!response.ok) {
@@ -70,7 +63,7 @@ export const fetchCoordinatesByCity = async (
   geonameId: number
 ): Promise<Coordinates | null> => {
   const response = await fetch(
-    `${GEONAMES_BASE_URL}/get?geonameId=${geonameId}&username=${GEONAMES_USERNAME}`
+    `${GEONAMES_PROXY_BASE_URL}get?geonameId=${geonameId}`
   );
 
   if (!response.ok) {
@@ -93,7 +86,7 @@ export const fetchCoordinatesByCityName = async (
   cityName: string
 ): Promise<Coordinates | null> => {
   const response = await fetch(
-    `${GEONAMES_BASE_URL}/searchJSON?q=${cityName}&maxRows=1&username=${GEONAMES_USERNAME}&featureClass=P`
+    `${GEONAMES_PROXY_BASE_URL}searchJSON?q=${cityName}&maxRows=1&featureClass=P`
   );
 
   if (!response.ok) {

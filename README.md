@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weather Widget Next.js
+
+A responsive weather widget built using Next.js that displays the current weather and forecast data. It supports different widget sizes (small, wide, large) and adapts to the user's location using geolocation. The widget allows users to search for weather data by city and uses Material-UI for styling.
+
+### 🌐 [Live Demo on Vercel](https://weather-widget-nextjs-roan.vercel.app/)
+
+## Features
+
+- **Responsive Design**: Supports small (2x2), wide (4x2), and large (4x4) widget sizes.
+- **Current Weather & Forecast**: Displays current weather conditions and a forecast for the next few days.
+- **Geolocation**: Automatically fetches weather data based on the user's location.
+- **City Search**: Allows users to search for weather data by city.
+- **Theming**: Light and dark mode support using Material-UI's theming.
+- **API Integrations**: Uses OpenWeatherMap and GeoNames APIs for weather and location data.
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
+
+1. **Clone the repository**:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   git clone https://github.com/yourusername/weather-widget-nextjs.git
+   cd weather-widget-nextjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install the dependencies**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+   npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Create a `.env.local` file in the root directory with your API keys**:
 
-## Learn More
+```
+   NEXT_PUBLIC_OPENWEATHERMAP_API_KEY=your_openweathermap_api_key
+   NEXT_PUBLIC_GEONAMES_USERNAME=your_geonames_username
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Scripts**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+   npm run dev: Starts the development server.
+   npm run build: Builds the application for production.
+   npm run start: Starts the production server.
+   npm run lint: Runs ESLint for code linting.
+   npm run test: Runs unit tests using Jest.
+   npm run test:watch: Runs Jest tests in watch mode.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Architecture
 
-## Deploy on Vercel
+```
+   /src/app/: Contains the main entry point and API routes.
+	 /src/common/: Holds shared hooks, services, and configuration files.
+	 /src/components/: Reusable UI components and weather-related features.
+	 /src/store/: State management using React Context and custom hooks.
+	 /src/styles/: Custom styles, themes, and global CSS.
+	 /public/: Static assets like icons.
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Linting & Formatting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    •	ESLint: Configured to enforce coding standards and best practices for JavaScript/TypeScript.
+    •	Prettier: Integrated for consistent code formatting.
+    •	Stylelint: Used for linting and fixing styles in CSS/SCSS files.
+
+## Testing
+
+    •	Jest: For unit testing and integration testing.
+    •	Testing Library: Simplifies testing React components by focusing on user interactions.
+    •	Cypress: For end-to-end testing, ensuring the app behaves correctly in real user scenarios.
+
+## Technologies Used
+
+    •	Next.js: React framework for server-side rendering and API routes.
+    •	React: Component-based UI library.
+    •	Material-UI: UI library for React, used for styling and responsive design.
+    •	OpenWeatherMap API: Provides weather data.
+    •	GeoNames API: Provides location data based on coordinates.
+    •	TypeScript: Type safety for better development experience.

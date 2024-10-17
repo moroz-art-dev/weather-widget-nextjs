@@ -5,7 +5,13 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['openweathermap.org'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'openweathermap.org',
+        pathname: '/img/wn/**',
+      },
+    ],
   },
   webpack: (config, {_isServer}) => config,
 };

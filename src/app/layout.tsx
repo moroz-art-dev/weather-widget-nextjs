@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <Box component='body'>
+      <Box component='body' cz-shortcut-listen='true'>
         <AppProvider>{children}</AppProvider>
       </Box>
     </html>
