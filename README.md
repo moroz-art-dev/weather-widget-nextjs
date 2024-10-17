@@ -50,32 +50,30 @@ To run this project locally, follow these steps:
 
 ## Project Architecture
 
-```
-   /src/app/: Contains the main entry point and API routes.
-	 /src/common/: Holds shared hooks, services, and configuration files.
-	 /src/components/: Reusable UI components and weather-related features.
-	 /src/store/: State management using React Context and custom hooks.
-	 /src/styles/: Custom styles, themes, and global CSS.
-	 /public/: Static assets like icons.
-```
+**/src/app/**: Contains the main entry point and API routes.
+**/src/common/**: Holds shared hooks, services, and configuration files.
+**/src/components/**: Reusable UI components and weather-related features.
+**/src/store/**: State management using React Context and custom hooks.
+**/src/styles/**: Custom styles, themes, and global CSS.
+**/public/**: Static assets like icons.
 
 ## Linting & Formatting
 
-    •	ESLint: Configured to enforce coding standards and best practices for JavaScript/TypeScript.
-    •	Prettier: Integrated for consistent code formatting.
-    •	Stylelint: Used for linting and fixing styles in CSS/SCSS files.
+- ESLint: Configured to enforce coding standards and best practices for JavaScript/TypeScript.
+- Prettier: Integrated for consistent code formatting.
+- Stylelint: Used for linting and fixing styles in CSS/SCSS files.
 
 ## Testing
 
-    •	Jest: For unit testing and integration testing.
-    •	Testing Library: Simplifies testing React components by focusing on user interactions.
-    •	Cypress: For end-to-end testing, ensuring the app behaves correctly in real user scenarios.
+- Jest: For unit testing and integration testing.
+- Testing Library: Simplifies testing React components by focusing on user interactions.
+- Cypress: For end-to-end testing, ensuring the app behaves correctly in real user scenarios.
 
 ## Technologies Used
 
-    •	Next.js: React framework for server-side rendering and API routes.
-    •	React: Component-based UI library.
-    •	Material-UI: UI library for React, used for styling and responsive design.
-    •	OpenWeatherMap API: Provides weather data.
-    •	GeoNames API: Provides location data based on coordinates.
-    •	TypeScript: Type safety for better development experience.
+- Next.js: React framework for server-side rendering and API routes.
+- React: Component-based UI library.
+- Material-UI: UI library for React, used for styling and responsive design.
+- OpenWeatherMap API: Provides weather data.
+- GeoNames API: Provides location data based on coordinates.
+- TypeScript: Type safety for better development experience.
